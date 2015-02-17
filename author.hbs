@@ -1,0 +1,46 @@
+{{!< default}}
+
+{{#author}}
+
+<nav>
+	<div class="toggle-menu">
+	    <div id="icon">
+	        <div class="one"></div>
+	        <div class="two"></div>
+	        <div class="three"></div>
+	    </div>
+
+	    <div id="menu">
+	        <ul>
+	            <li>
+	            	<a href="http://www.dribba.com" target="_blank"><span><i class="fa fa-twitter"></i></span> Dribba</a> 
+	            </li>
+	            <li>
+	            	<a href="{{@blog.url}}/rss/"><span><i class="fa fa-rss"></i></span> RSS</a>
+	            </li>                
+	        </ul>
+	    </div> 
+	 </div>
+</nav>
+
+<header class="main-header {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
+	<figure class="logo">
+		{{#if @blog.logo}}<a href="{{website}}"><img class="img-logo" src="{{image}}" alt="Logo Blog"></a>{{/if}}
+	</figure>
+	<div class="title">
+		<a href="{{website}}">
+			<h1>{{name}}</h1>
+		</a>
+		{{#if bio}}
+			<p>{{{bio}}}</p>
+		{{/if}}
+	</div>
+</header>
+
+{{/author}}
+
+<section class="posts">
+
+	{{> "loop"}}
+
+</section>

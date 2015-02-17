@@ -1,0 +1,36 @@
+{{!< default}}
+<nav>
+	<div class="toggle-menu">
+	    <div id="icon">
+	        <div class="one"></div>
+	        <div class="two"></div>
+	        <div class="three"></div>
+	    </div>
+	    <div id="menu">
+	        <ul>
+	        	<li>
+	            	<a href="http://www.twitter.com/info_dribba" target="_blank"><span><i class="fa fa-rocket"></i></span> Dribba</a> 
+	            </li>
+	            <li>
+	            	<a href="http://www.twitter.com/info_dribba" target="_blank"><span><i class="fa fa-twitter"></i></span> Twitter</a> 
+	            </li>
+	            <li>
+	            	<a href="feed://{{@blog.url}}/rss/"><span><i class="fa fa-rss"></i></span> RSS</a>
+	            </li>                
+	        </ul>
+	    </div> 
+	 </div>
+</nav>
+
+<header class="main-header {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
+	<div class="title">
+		<a href="{{@blog.url}}">
+			<h1>{{@blog.title}}</h1>
+		</a>
+		<p>{{@blog.description}}</p>
+	</div>
+</header>
+
+<section class="posts">
+	{{> "loop"}}
+</section>
